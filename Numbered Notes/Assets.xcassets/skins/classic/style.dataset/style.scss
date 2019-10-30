@@ -1,0 +1,73 @@
+.classic-skin.piano-app {
+
+  .song-panel {
+    background: url("NotesBackdrop.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .piano-key {
+    .black {
+      background: black url("BlackKey.png");
+      background-size: 100% 100%;
+      box-shadow: none;
+    }
+
+    .white {
+      background: white url("WhiteKey.png");
+      background-size: 100% 100%;
+      box-shadow: none;
+      color: black;
+      margin-bottom: 1vh;
+    }
+
+    .black.active {
+      box-shadow: 0 4px 8px 2px #ff0000cc;
+    }
+    .white.active {
+      box-shadow: 0 4px 8px 4px #ff0000;
+    }
+
+    .white.active .key-label ,
+    .black.active .key-label {
+    }
+  }
+
+  .piano-octave-button {
+    background-color: #000000;
+    color: #ffffff88;
+    &.selected {
+      background-color: #00000088;
+    }
+  }
+
+  .song-results {
+    background: transparent url(WoodLight.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+    border-radius: 2px;
+    box-shadow: inset 3px 3px 6px 0 #ffffff88, inset -3px -3px 6px 0 #00000088, 0.5vh 0.5vh 0.5vh rgba(0,0,0,.4);
+    color: #5a0d07;
+  }
+
+  .main-menu-button {
+    background: transparent url(WoodLight.jpg) no-repeat 0 0;
+    box-shadow: inset 3px 3px 6px 0 #ffffff88, inset -3px -3px 6px 0 #00000088, 0.5vh 0.5vh 0.5vh rgba(0,0,0,.4);
+  }
+
+
+  .main-menu-button .bm-burger-bars {
+    background: transparent url('WoodDarker.jpg') no-repeat 0 0;
+    height: calc((100% - 6px) * 0.2) !important;
+    left: 6px !important;
+    right: 6px !important;
+    top: 6px !important;
+  }
+
+  .main-menu-button .bm-burger-bars:nth-child(2) {
+    top: 40% !important;
+  }
+
+  .main-menu-button .bm-burger-bars:nth-child(3) {
+    top: calc(80% - 6px) !important;
+  }
+}

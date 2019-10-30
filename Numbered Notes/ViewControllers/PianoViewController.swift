@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  PianoViewController.swift
 //  Numbered Notes
 //
 //  Created by McKlyde Lagnada on 10/29/19.
@@ -9,18 +9,26 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import os
 
-class GameViewController: UIViewController {
+class PianoViewController: UIViewController {
+    
+    var pianoManager: Keyboard?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pianoManager!.preload(withCompletion:{
+            () -> Void in
+            os_log("Preloading assets complete.", log: OSLog.default, type: .info)
+        })
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = PianoScene(fileNamed: "PianoScene") {
+                scene.pianoManager = self.pianoManager
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
+                scene.scaleMode = .resizeFill
                 // Present the scene
                 view.presentScene(scene)
             }
