@@ -28,37 +28,6 @@ class PianoScene: SKScene {
             
             pianoManager!.play(touchedNode, self)
             
-////          TODO: Off load this to another class!
-//            if node.name == "PianoKey1" {
-////                First option
-//                self.run(pianoManager!.play("04", "C"))
-//
-//
-//
-///*              Second Option
-//                Issue: Adds nodes. BAD idea.
-//
-//
-//                let path:String = Bundle.main.path(forResource: "01_C", ofType: "mp3")!
-//                let url: URL = URL(fileURLWithPath: path)
-//                let audio = SKAudioNode(url: url)
-//                audio.isPositional = false
-//                audio.autoplayLooped = false
-//                self.addChild(audio)
-//                audio.run(SKAction.play())
-//*/
-//            }
-//            if node.name == "PianoKey2" {
-//                self.run(pianoManager!.play("04", "D"))
-//            }
-//            if node.name == "PianoKey3" {
-//                self.run(pianoManager!.play("04", "E"))
-//            }
-//            if node.name == "PianoKey4" {
-//                self.run(pianoManager!.play("04", "F"))
-//            }
-//
-            
             
         }
         

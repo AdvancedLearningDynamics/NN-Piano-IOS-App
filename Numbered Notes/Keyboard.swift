@@ -24,11 +24,15 @@ class Keyboard {
     func preload(withCompletion callback: () -> Void){
         
         do {
-            for sound in sounds {
-                let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
-                let url: URL = URL(fileURLWithPath: path)
-                let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
-                player.prepareToPlay()
+            for octave in 1...6 {
+                for note in Notes.allCases {
+                    let sound = "0\(octave)_\(note)"
+                    let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
+                    let url: URL = URL(fileURLWithPath: path)
+                    let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                    player.prepareToPlay()
+                }
+                
             }
         }
         catch {
