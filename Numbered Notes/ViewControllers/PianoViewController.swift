@@ -28,7 +28,7 @@ class PianoViewController: UIViewController {
             if let scene = PianoScene(fileNamed: "PianoScene") {
                 scene.pianoManager = self.pianoManager
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .resizeFill
+                scene.scaleMode = .aspectFit
                 // Present the scene
                 view.presentScene(scene)
             }

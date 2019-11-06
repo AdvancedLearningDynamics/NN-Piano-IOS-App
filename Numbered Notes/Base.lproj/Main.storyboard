@@ -41,7 +41,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0cz-jU-r4G"/>
                     <connections>
-                        <segue destination="BV1-FR-VrT" kind="showDetail" identifier="showPianoView" animates="NO" id="2lu-cM-3av"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="showPianoView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2lu-cM-3av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm5-W6-bJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
