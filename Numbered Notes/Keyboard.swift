@@ -12,7 +12,7 @@ import AVFoundation
 import os
 
 class Keyboard {
-    var sounds: [String]
+    var sounds: [String] // Get rid of this.
     var skin: String
     
     

@@ -7,6 +7,6 @@
 //
 
 
-enum Notes: CaseIterable {
+enum Notes: Int, CaseIterable {
     case A, AsBf, B, C, CsDf, D, DsEf, E, F, G, GsAf
 }
