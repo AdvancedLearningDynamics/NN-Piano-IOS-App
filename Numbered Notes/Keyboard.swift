@@ -43,10 +43,14 @@ class Keyboard {
         return
     }
     
-    func play(_ octave: String, _ note: String) -> SKAction {
+    func play(_ touchedNode: SKNode, _ scene: SKScene) -> Void {
 //      Create a soundManager file for more flexbility.
-        let fileName = octave+"_"+note+".mp3"
-        return SKAction.playSoundFileNamed(fileName, waitForCompletion: false)
+        if(touchedNode.parent?.name == "Keyboard"){
+            let octave: String = "04" // Default right now
+            let note: String = touchedNode.name!
+            let fileName = octave+"_"+note+".mp3"
+            scene.run(SKAction.playSoundFileNamed(fileName, waitForCompletion: false))
+        }
     }
 }
 
