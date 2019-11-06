@@ -16,6 +16,9 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SoundManager.getSongList(completion: {songs -> Void in
+            print(songs)
+        })
 
         os_log("Main menu loaded", log: OSLog.default, type: .info)
     }
