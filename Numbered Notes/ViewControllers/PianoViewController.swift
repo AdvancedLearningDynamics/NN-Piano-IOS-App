@@ -28,7 +28,7 @@ class PianoViewController: UIViewController {
             if let scene = PianoScene(fileNamed: "PianoScene") {
                 scene.pianoManager = self.pianoManager
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .resizeFill
+                scene.scaleMode = .aspectFit
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -45,11 +45,7 @@ class PianoViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .landscape
     }
 
     override var prefersStatusBarHidden: Bool {

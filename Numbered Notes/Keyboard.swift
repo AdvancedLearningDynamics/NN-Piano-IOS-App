@@ -12,7 +12,7 @@ import AVFoundation
 import os
 
 class Keyboard {
-    var sounds: [String]
+    var sounds: [String] // Get rid of this.
     var skin: String
     
     
@@ -24,11 +24,15 @@ class Keyboard {
     func preload(withCompletion callback: () -> Void){
         
         do {
-            for sound in sounds {
-                let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
-                let url: URL = URL(fileURLWithPath: path)
-                let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
-                player.prepareToPlay()
+            for octave in 1...6 {
+                for note in Notes.allCases {
+                    let sound = "0\(octave)_\(note)"
+                    let path: String = Bundle.main.path(forResource: sound, ofType: "mp3")!
+                    let url: URL = URL(fileURLWithPath: path)
+                    let player: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                    player.prepareToPlay()
+                }
+                
             }
         }
         catch {
@@ -43,10 +47,14 @@ class Keyboard {
         return
     }
     
-    func play(_ octave: String, _ note: String) -> SKAction {
+    func play(_ touchedNode: SKNode, _ scene: SKScene) -> Void {
 //      Create a soundManager file for more flexbility.
-        let fileName = octave+"_"+note+".mp3"
-        return SKAction.playSoundFileNamed(fileName, waitForCompletion: false)
+        if(touchedNode.parent?.name == "Keyboard"){
+            let octave: String = "04" // Default right now
+            let note: String = touchedNode.name!
+            let fileName = octave+"_"+note+".mp3"
+            scene.run(SKAction.playSoundFileNamed(fileName, waitForCompletion: false))
+        }
     }
 }
 

@@ -17,6 +17,7 @@
 		4802F25F23681D4C00948EA8 /* Numbered_NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802F25E23681D4C00948EA8 /* Numbered_NotesTests.swift */; };
 		4802F26A23681D4C00948EA8 /* Numbered_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802F26923681D4C00948EA8 /* Numbered_NotesUITests.swift */; };
 		4802F27B23682EBD00948EA8 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802F27A23682EBD00948EA8 /* MainMenuViewController.swift */; };
+		4849615C237254E400989C9B /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849615B237254E400989C9B /* Notes.swift */; };
 		48EA279123694AF600C3A22A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA279023694AF600C3A22A /* Keyboard.swift */; };
 		48EA27DA2369671300C3A22A /* 02_D.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 48EA27922369670900C3A22A /* 02_D.mp3 */; };
 		48EA27DB2369671300C3A22A /* 04_F.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 48EA27932369670900C3A22A /* 04_F.mp3 */; };
@@ -126,6 +127,7 @@
 		4802F26923681D4C00948EA8 /* Numbered_NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbered_NotesUITests.swift; sourceTree = "<group>"; };
 		4802F26B23681D4C00948EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4802F27A23682EBD00948EA8 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		4849615B237254E400989C9B /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		48EA279023694AF600C3A22A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		48EA27922369670900C3A22A /* 02_D.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 02_D.mp3; sourceTree = "<group>"; };
 		48EA27932369670900C3A22A /* 04_F.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 04_F.mp3; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		4802F24223681D4B00948EA8 /* Numbered Notes */ = {
 			isa = PBXGroup;
 			children = (
+				4849615A237254BB00989C9B /* Models */,
 				48EA278F23694AAE00C3A22A /* ViewControllers */,
 				48EA278E23694A9A00C3A22A /* Scenes */,
 				4802F277236823F700948EA8 /* Sounds */,
@@ -357,6 +360,14 @@
 				48EA27D72369671300C3A22A /* 06_GsAf.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		4849615A237254BB00989C9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4849615B237254E400989C9B /* Notes.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		48EA278E23694A9A00C3A22A /* Scenes */ = {
@@ -582,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4802F27B23682EBD00948EA8 /* MainMenuViewController.swift in Sources */,
+				4849615C237254E400989C9B /* Notes.swift in Sources */,
 				4802F24A23681D4B00948EA8 /* PianoScene.swift in Sources */,
 				48EA279123694AF600C3A22A /* Keyboard.swift in Sources */,
 				4802F24C23681D4B00948EA8 /* PianoViewController.swift in Sources */,
