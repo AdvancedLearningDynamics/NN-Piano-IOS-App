@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0RO-2k-4SE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0RO-2k-4SE">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +41,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0cz-jU-r4G"/>
                     <connections>
-                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="showPianoView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2lu-cM-3av"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="showPianoView" animates="NO" modalPresentationStyle="fullScreen" id="2lu-cM-3av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm5-W6-bJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

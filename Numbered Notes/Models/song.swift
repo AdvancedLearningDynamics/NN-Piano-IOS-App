@@ -21,7 +21,7 @@ struct Songs {
         for i in 0..<csvFile.count {
             let name = csvFile[i].components(separatedBy: "/")
             names[i] = name[name.count - 2]
-            songPath[i] = csvFile[i]
+            songPath[i] = "\(csvFile[i])\(names[i]).csv"
         }
     }
     
@@ -35,9 +35,6 @@ struct Song {
     var tempo: Int
     var Notes: String
     var lyrics: String
-//    var Cover: String  ?
-//    var wav: String ?
-//    var style: String ?
     var video: URL
     var score: URL
     var key: String
