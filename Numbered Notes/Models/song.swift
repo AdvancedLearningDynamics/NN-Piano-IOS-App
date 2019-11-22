@@ -29,14 +29,20 @@ struct Songs {
     
 }
 
-struct Song {
+struct Song: Decodable {
     var name: String
     var title: String
-    var tempo: Int
-    var Notes: String
-    var lyrics: String
-    var video: URL
-    var score: URL
+    var tempo: String
+    var notes: [Note]
+    var lyrics: [String]
+    var video: String
+    var score: String
     var key: String
     var timeSignature: String
+}
+
+struct Note: Decodable {
+    var notename: String
+    var octave: Int
+    var timing: String
 }

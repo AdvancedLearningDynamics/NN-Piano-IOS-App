@@ -11,13 +11,17 @@ import os
 
 class MainMenuViewController: UIViewController {
     
-    var sounds: [String] = ["04_C","04_D","04_E","04_F"]
+    var song: Song?
     var theme: String = "classic"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SoundManager.getSongList(withCompletion: {songs -> Void in
-            SoundManager.getSong(song: songs.songPath[0])
+            print(songs)
+            SoundManager.getSong(song: songs.songPath[0], withCompletion: {song -> Void in
+                self.song = song
+                print(song.name)
+            })
         })
 
         os_log("Main menu loaded", log: OSLog.default, type: .info)
@@ -25,7 +29,7 @@ class MainMenuViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let pianoview = segue.destination as! PianoViewController
-        pianoview.pianoManager = Keyboard(sounds, theme)
+        pianoview.pianoManager = Keyboard(song!, theme)
     }
     
 

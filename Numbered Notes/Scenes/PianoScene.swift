@@ -17,6 +17,14 @@ class PianoScene: SKScene {
     
     override func didMove(to view: SKView) {
         os_log("PianoScene has loaded", log: OSLog.default, type: .info)
+        let NoteToPlay: SKLabelNode? = self.childNode(withName: "NoteToPlay") as! SKLabelNode
+        let Lyrics: SKLabelNode? = self.childNode(withName: "Lyrics") as! SKLabelNode
+        NoteToPlay!.text = "\(pianoManager!.song.notes[pianoManager!.songIndex].notename)"
+        if("\(pianoManager!.song.notes[pianoManager!.songIndex].notename)" == "R"){
+            pianoManager!.songIndex+=1
+            NoteToPlay!.text = "\(pianoManager!.song.notes[pianoManager!.songIndex].notename)"
+            Lyrics!.text = "\(pianoManager!.song.lyrics[pianoManager!.songIndex])"
+        }
         
     }
     
