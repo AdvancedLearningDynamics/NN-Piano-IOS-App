@@ -20,6 +20,7 @@
 		481B84D223728356002D6A72 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B84D123728356002D6A72 /* SoundManager.swift */; };
 		481B84D423728930002D6A72 /* song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B84D323728930002D6A72 /* song.swift */; };
 		4849615C237254E400989C9B /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849615B237254E400989C9B /* Notes.swift */; };
+		48C443DB2397678300BEC7C2 /* MusicDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C443DA2397678300BEC7C2 /* MusicDisplayManager.swift */; };
 		48EA279123694AF600C3A22A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA279023694AF600C3A22A /* Keyboard.swift */; };
 		48EA27DA2369671300C3A22A /* 02_D.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 48EA27922369670900C3A22A /* 02_D.mp3 */; };
 		48EA27DB2369671300C3A22A /* 04_F.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 48EA27932369670900C3A22A /* 04_F.mp3 */; };
@@ -132,6 +133,7 @@
 		481B84D123728356002D6A72 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		481B84D323728930002D6A72 /* song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = song.swift; sourceTree = "<group>"; };
 		4849615B237254E400989C9B /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		48C443DA2397678300BEC7C2 /* MusicDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDisplayManager.swift; sourceTree = "<group>"; };
 		48EA279023694AF600C3A22A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		48EA27922369670900C3A22A /* 02_D.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 02_D.mp3; sourceTree = "<group>"; };
 		48EA27932369670900C3A22A /* 04_F.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 04_F.mp3; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				481B84D123728356002D6A72 /* SoundManager.swift */,
+				48C443DA2397678300BEC7C2 /* MusicDisplayManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				4802F27B23682EBD00948EA8 /* MainMenuViewController.swift in Sources */,
 				4849615C237254E400989C9B /* Notes.swift in Sources */,
 				4802F24A23681D4B00948EA8 /* PianoScene.swift in Sources */,
+				48C443DB2397678300BEC7C2 /* MusicDisplayManager.swift in Sources */,
 				48EA279123694AF600C3A22A /* Keyboard.swift in Sources */,
 				481B84D423728930002D6A72 /* song.swift in Sources */,
 				4802F24C23681D4B00948EA8 /* PianoViewController.swift in Sources */,

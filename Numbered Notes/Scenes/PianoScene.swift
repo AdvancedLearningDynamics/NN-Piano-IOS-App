@@ -12,19 +12,15 @@ import os
 
 class PianoScene: SKScene {
     var pianoManager: Keyboard?
-    var pianokey1: SKSpriteNode?
     
     
     override func didMove(to view: SKView) {
         os_log("PianoScene has loaded", log: OSLog.default, type: .info)
-        let NoteToPlay: SKLabelNode? = self.childNode(withName: "NoteToPlay") as! SKLabelNode
-        let Lyrics: SKLabelNode? = self.childNode(withName: "Lyrics") as! SKLabelNode
-        NoteToPlay!.text = "\(pianoManager!.song.notes[pianoManager!.songIndex].notename)"
-        if("\(pianoManager!.song.notes[pianoManager!.songIndex].notename)" == "R"){
-            pianoManager!.songIndex+=1
-            NoteToPlay!.text = "\(pianoManager!.song.notes[pianoManager!.songIndex].notename)"
-            Lyrics!.text = "\(pianoManager!.song.lyrics[pianoManager!.songIndex])"
-        }
+        let LyricsDisplay: SKNode? = self.childNode(withName: "LyricsDisplay")
+        var lyricsDisplayManager: MusicDisplayManager = MusicDisplayManager(pianoManager!.song.notes, pianoManager!.song.lyrics, LyricsDisplay!)
+        pianoManager!.LyricDisplayManager = lyricsDisplayManager
+        lyricsDisplayManager.display()
+        
         
     }
     
