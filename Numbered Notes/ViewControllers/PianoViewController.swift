@@ -22,7 +22,7 @@ class PianoViewController: UIViewController {
             () -> Void in
             os_log("Preloading assets complete.", log: OSLog.default, type: .info)
         })
-        
+        print(self.view?.window?.rootViewController)
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = PianoScene(fileNamed: "PianoScene") {
@@ -37,6 +37,7 @@ class PianoViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
         }
     }
 

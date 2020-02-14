@@ -20,15 +20,27 @@ class PianoScene: SKScene {
         var lyricsDisplayManager: MusicDisplayManager = MusicDisplayManager(pianoManager!.song.notes, pianoManager!.song.lyrics, LyricsDisplay!)
         pianoManager!.LyricDisplayManager = lyricsDisplayManager
         lyricsDisplayManager.display()
+        pianoManager?.checkForRests();
         
         
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
+
+        
+        
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode : SKNode = self.atPoint(location)
+            
+            if(touchedNode.name == "CloseButton"){
+                self.removeFromParent()
+                self.view?.window?.rootViewController?.dismiss(animated: false, completion: nil)
+                return;
+            }
             
             pianoManager!.play(touchedNode, self)
             

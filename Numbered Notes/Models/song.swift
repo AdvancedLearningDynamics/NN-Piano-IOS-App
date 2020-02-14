@@ -8,24 +8,11 @@
 
 import Foundation
 
-struct Songs {
+struct Songs: Decodable {
     
-    var names: [String]
-    var songPath: [String]
-    
-    init(_ csvFile: [String]) {
-        names = Array(repeating: "null", count: csvFile.count)
-        songPath = Array(repeating: "null", count: csvFile.count)
-        
-        
-        for i in 0..<csvFile.count {
-            let name = csvFile[i].components(separatedBy: "/")
-            names[i] = name[name.count - 2]
-            songPath[i] = "\(csvFile[i])\(names[i]).csv"
-        }
-    }
-    
-    
+    var filename: String
+    var genre: String
+    var filepath: String
     
 }
 

@@ -17,6 +17,30 @@ class Keyboard {
     var songIndex: Int
     var LyricDisplayManager: MusicDisplayManager?
     
+    
+    let equivalentNotes = [
+        "C#": "CsDf",
+        "D#": "DsEf",
+        "E#": "F",
+        "F#": "FsGf",
+        "G#": "GsAf",
+        "A#": "AsBf",
+        "B#": "C",
+        "C": "C",
+        "D": "D",
+        "E": "E",
+        "F": "F",
+        "G": "G",
+        "A": "A",
+        "B": "B",
+        "CsDf": "CsDf",
+        "DsEf": "DsEf",
+        "FsGf": "FsGf",
+        "GsAf": "GsAf",
+        "AsBf": "AsBf"
+    
+    ]
+    
     init(_ song: Song, _ skin: String){
         self.song = song
         self.skin = skin
@@ -49,12 +73,17 @@ class Keyboard {
         return
     }
     
+    func next() {
+        songIndex += 1
+        LyricDisplayManager!.displayNode(index: songIndex)
+    }
+    
     func play(_ touchedNode: SKNode, _ scene: SKScene) -> Void {
 //      Create a soundManager file for more flexbility.
         if(touchedNode.parent?.name == "Keyboard"){
             let notes = song.notes
             let currentNote = notes[songIndex]
-            if(currentNote.notename == touchedNode.name! && songIndex+1 != song.notes.count){
+            if(equivalentNotes[currentNote.notename] == touchedNode.name! && songIndex+1 != song.notes.count){
                 
                 
                 let octave: String = "0\(String(currentNote.octave))" // Default right now
@@ -62,8 +91,7 @@ class Keyboard {
                 let fileName = octave+"_"+note+".mp3"
                 scene.run(SKAction.playSoundFileNamed(fileName, waitForCompletion: false))
                 
-                songIndex += 1
-                LyricDisplayManager!.displayNode(index: songIndex)
+                next()
             }
             
             else {
@@ -76,10 +104,18 @@ class Keyboard {
             
             
         }
+        checkForRests();
         
-        if(self.song.notes[songIndex].notename == "R"){
-            songIndex += 1
-            LyricDisplayManager!.displayNode(index: songIndex)
+        
+    }
+    
+    func checkForRests() -> Void {
+        if(self.song.notes[songIndex].notename == "R" || self.song.notes[songIndex].notename == ""){
+            next()
+            checkForRests()
+        }
+        else {
+            return
         }
     }
 }
