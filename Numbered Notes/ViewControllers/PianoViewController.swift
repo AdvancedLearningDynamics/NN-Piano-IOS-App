@@ -14,6 +14,7 @@ import os
 class PianoViewController: UIViewController {
     
     var pianoManager: Keyboard?
+    var displayNumber: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class PianoViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             if let scene = PianoScene(fileNamed: "PianoScene") {
                 scene.pianoManager = self.pianoManager
+                scene.displayNumber = self.displayNumber
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
                 // Present the scene

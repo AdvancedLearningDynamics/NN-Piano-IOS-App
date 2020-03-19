@@ -31,14 +31,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="Nc0-Sd-S3g" customClass="TextCellTableViewCell" customModule="Numbered_Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="574" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="574" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nc0-Sd-S3g" id="uzo-pf-COF">
-                                            <rect key="frame" x="0.0" y="0.0" width="574" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="574" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHE-9u-Zlx">
-                                                    <rect key="frame" x="20" y="11" width="534" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="534" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,11 +57,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZI-yl-V4c">
+                                <rect key="frame" x="637" y="34" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CiN-x9-dMW">
+                                <rect key="frame" x="675" y="63" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="0ty-0Y-7Wd"/>
+                                    <constraint firstAttribute="width" constant="47" id="YMx-NG-4KZ"/>
+                                </constraints>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="guW-n2-lM5" firstAttribute="centerX" secondItem="62t-yf-zjz" secondAttribute="centerX" constant="-101" id="5kW-gs-0xj"/>
                             <constraint firstItem="lk2-FX-TOe" firstAttribute="centerX" secondItem="62t-yf-zjz" secondAttribute="centerX" id="dcX-ms-dfW"/>
+                            <constraint firstItem="CiN-x9-dMW" firstAttribute="centerX" secondItem="62t-yf-zjz" secondAttribute="centerX" constant="250.5" id="ghP-Y8-THk"/>
+                            <constraint firstItem="CiN-x9-dMW" firstAttribute="centerY" secondItem="62t-yf-zjz" secondAttribute="centerY" constant="-128.5" id="h8n-jh-kjL"/>
                             <constraint firstItem="lk2-FX-TOe" firstAttribute="centerY" secondItem="62t-yf-zjz" secondAttribute="centerY" constant="-174" id="lKu-Q0-Prc"/>
                             <constraint firstItem="guW-n2-lM5" firstAttribute="centerY" secondItem="62t-yf-zjz" secondAttribute="centerY" id="p30-QF-ucy"/>
                         </constraints>
@@ -69,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0cz-jU-r4G"/>
                     <connections>
+                        <outlet property="displayNumber" destination="CiN-x9-dMW" id="im3-9b-00T"/>
                         <outlet property="songlistTable" destination="guW-n2-lM5" id="xbh-L6-rlw"/>
                         <segue destination="BV1-FR-VrT" kind="presentation" identifier="showPianoView" animates="NO" modalPresentationStyle="fullScreen" id="2lu-cM-3av"/>
                     </connections>

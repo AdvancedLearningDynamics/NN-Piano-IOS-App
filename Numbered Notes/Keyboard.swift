@@ -18,7 +18,7 @@ class Keyboard {
     var LyricDisplayManager: MusicDisplayManager?
     
     
-    let equivalentNotes = [
+    static let equivalentNotes = [
         "C#": "CsDf",
         "D#": "DsEf",
         "E#": "F",
@@ -83,7 +83,7 @@ class Keyboard {
         if(touchedNode.parent?.name == "Keyboard"){
             let notes = song.notes
             let currentNote = notes[songIndex]
-            if(equivalentNotes[currentNote.notename] == touchedNode.name! && songIndex+1 != song.notes.count){
+            if(Keyboard.equivalentNotes[currentNote.notename] == touchedNode.name! && songIndex+1 != song.notes.count){
                 
                 
                 let octave: String = "0\(String(currentNote.octave))" // Default right now

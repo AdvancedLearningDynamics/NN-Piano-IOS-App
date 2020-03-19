@@ -16,7 +16,8 @@ class MainMenuViewController: UIViewController {
     var theme: String = "classic"
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var songlistTable: UITableView!
-    
+    @IBOutlet weak var displayNumber: UISwitch!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.songlistTable.delegate = self
@@ -40,6 +41,7 @@ class MainMenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let pianoview = segue.destination as! PianoViewController
         pianoview.pianoManager = Keyboard(song!, theme)
+        pianoview.displayNumber = displayNumber.isOn
     }
     
 
